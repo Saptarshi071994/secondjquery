@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Changing Rectangle</title>
+<style>
+    #rectangle {
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div id="rectangle"></div>
+
+<input type="radio" name="color" id="blueRadio" value="blue"> Blue
+<input type="radio" name="color" id="yellowRadio" value="yellow"> Yellow
+<input type="radio" name="color" id="greenRadio" value="green"> Green
+<input type="radio" name="color" id="clearRadio" value="clear"> Clear
+
+<script>
+    const rectangle = document.getElementById("rectangle");
+    const blueRadio = document.getElementById("blueRadio");
+    const yellowRadio = document.getElementById("yellowRadio");
+    const greenRadio = document.getElementById("greenRadio");
+    const clearRadio = document.getElementById("clearRadio");
+
+    function changeColor() {
+        if (blueRadio.checked) {
+            rectangle.style.backgroundColor = "blue";
+        } else if (yellowRadio.checked) {
+            rectangle.style.backgroundColor = "yellow";
+        } else if (greenRadio.checked) {
+            rectangle.style.backgroundColor = "green";
+        } else if (clearRadio.checked) {
+            rectangle.style.backgroundColor = "white";
+        }
+    }
+
+    blueRadio.addEventListener("change", changeColor);
+    yellowRadio.addEventListener("change", changeColor);
+    greenRadio.addEventListener("change", changeColor);
+    clearRadio.addEventListener("change", changeColor);
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Rectangle</title>
+    <style>
+        #rectangle {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="rectangle"></div>
+
+    <input type="radio" name="color" id="blueRadio" value="blue"> Blue
+    <input type="radio" name="color" id="yellowRadio" value="yellow"> Yellow
+    <input type="radio" name="color" id="greenRadio" value="green"> Green
+    <input type="radio" name="color" id="clearRadio" value="white"> Clear
+
+    <script>
+        $(document).ready(function () {
+            const rectangle = $("#rectangle");
+
+            $("input[type='radio']").change(function () {
+                const selectedColor = $("input[name='color']:checked").val();
+                rectangle.css("background-color", selectedColor);
+            });
+        });
+    </script>
+</body>
+
+</html>

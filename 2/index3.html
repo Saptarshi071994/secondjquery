@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Color Changing Rectangle</title>
+    <style>
+        #rectangle {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rectangle"></div>
+
+    <select id="colorSelect">
+        <option value="white">Select Color</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="">Clear</option>
+    </select>
+
+    <script>
+        $(document).ready(function () {
+            const rectangle = $("#rectangle");
+            const colorSelect = $("#colorSelect");
+
+            colorSelect.change(function () {
+                const selectedColor = colorSelect.val();
+                rectangle.css("background-color", selectedColor);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
